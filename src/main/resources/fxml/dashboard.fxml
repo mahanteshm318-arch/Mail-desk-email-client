@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.web.WebView?>
+<?import javafx.scene.web.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.maildesk.controller.DashboardController">
+<BorderPane prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.maildesk.controller.DashboardController"
+            stylesheets="@/style.css">
 
+    <!-- Top toolbar -->
+    <top>
+        <HBox styleClass="toolbar" alignment="CENTER_LEFT" spacing="10">
+            <padding><Insets top="10" right="16" bottom="10" left="16"/></padding>
+            <Label text="MailDesk" styleClass="app-title-small"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="searchField" promptText="Search emails..." prefWidth="220"/>
+            <Button text="Search" onAction="#handleSearch"/>
+            <Button text="Compose" onAction="#handleCompose" styleClass="primary-button"/>
+            <Button text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <!-- Sidebar -->
     <left>
-        <VBox fx:id="sidebar" spacing="10" styleClass="sidebar" prefWidth="220">
-
-            <Button text="☰ Toggle" onAction="#toggleSidebar" styleClass="toggle-button"/>
-            <Label text="MailDesk" styleClass="sidebar-title"/>
-
-            <Button text="Inbox" styleClass="sidebar-button"/>
-            <Button text="Compose" onAction="#openCompose" styleClass="sidebar-button"/>
-            <Button text="Logout" onAction="#logout" styleClass="sidebar-button"/>
-
+        <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="170" spacing="4">
+            <padding><Insets top="16" right="8" bottom="16" left="8"/></padding>
+            <Button text="Inbox" onAction="#handleInbox" prefWidth="154" styleClass="sidebar-btn"/>
+            <Button text="Sent" onAction="#handleSent" prefWidth="154" styleClass="sidebar-btn"/>
+            <Button text="Refresh" onAction="#handleRefresh" prefWidth="154" styleClass="sidebar-btn"/>
         </VBox>
     </left>
 
+    <!-- Email list -->
     <center>
-        <ListView fx:id="inboxList"
-                  onMouseClicked="#openEmail"/>
+        <SplitPane dividerPositions="0.35">
+            <ListView fx:id="inboxList" prefWidth="280"/>
+            <VBox>
+                <WebView fx:id="emailPreview" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </SplitPane>
     </center>
 
-    <right>
-        <WebView fx:id="emailPreview" prefWidth="450"/>
-    </right>
-
+    <!-- Status bar -->
+    <bottom>
+        <HBox styleClass="statusbar">
+            <padding><Insets top="4" right="12" bottom="4" left="12"/></padding>
+            <Label fx:id="statusLabel" text="Ready"/>
+        </HBox>
+    </bottom>
 </BorderPane>

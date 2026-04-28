@@ -1,24 +1,28 @@
 package com.maildesk;
 
+import com.maildesk.service.DatabaseService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
+        // Initialize DB on startup
+        DatabaseService.getInstance();
 
-        FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/fxml/login.fxml")
-        );
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+        primaryStage.setTitle("MailDesk");
+        primaryStage.setScene(new Scene(root, 800, 500));
+        primaryStage.show();
+    }
 
-        Scene scene = new Scene(loader.load(), 500, 400);
-
-        stage.setTitle("MailDesk Login");
-        stage.setScene(scene);
-        stage.show();
+    @Override
+    public void stop() {
+        DatabaseService.getInstance().close();
     }
 
     public static void main(String[] args) {

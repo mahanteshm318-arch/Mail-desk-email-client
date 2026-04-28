@@ -1,136 +1,103 @@
-/* Root */
 .root {
-    -fx-font-family: "Segoe UI";
-    -fx-background-color: #f5f7fb;
-}
-
-/* ---------------- LOGIN PAGE ---------------- */
-
-.login-box {
-    -fx-background-color: white;
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0.2, 0, 5);
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
 }
 
 .app-title {
-    -fx-font-size: 30px;
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1f2937;
+    -fx-text-fill: #1a73e8;
+}
+
+.app-title-small {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a73e8;
 }
 
 .subtitle {
-    -fx-font-size: 14px;
-    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+    -fx-text-fill: #666;
 }
 
-/* Input Fields */
-.text-field,
-.password-field {
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-border-color: #d1d5db;
-    -fx-padding: 10;
-    -fx-font-size: 14px;
+.hint-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #999;
 }
 
-.text-field:focused,
-.password-field:focused {
-    -fx-border-color: #2563eb;
+.status-label {
+    -fx-text-fill: #d93025;
+    -fx-font-size: 12px;
 }
 
-/* Login Button */
-.login-button {
-    -fx-background-color: #2563eb;
-    -fx-text-fill: white;
-    -fx-font-size: 15px;
-    -fx-font-weight: bold;
-    -fx-background-radius: 10;
-    -fx-cursor: hand;
-}
-
-.login-button:hover {
-    -fx-opacity: 0.9;
-}
-
-/* ---------------- DASHBOARD ---------------- */
-
-/* Sidebar */
-.sidebar {
-    -fx-background-color: #111827;
-}
-
-/* Sidebar Title */
-.sidebar-title {
-    -fx-text-fill: white;
-    -fx-font-size: 24px;
-    -fx-font-weight: bold;
-}
-
-/* Sidebar Buttons */
-.sidebar-button {
-    -fx-background-color: transparent;
-    -fx-text-fill: white;
-    -fx-font-size: 15px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-pref-width: 180px;
-    -fx-cursor: hand;
-}
-
-.sidebar-button:hover {
-    -fx-background-color: #1f2937;
-    -fx-background-radius: 8;
-}
-
-/* Toggle Button */
-.toggle-button {
-    -fx-background-color: transparent;
-    -fx-text-fill: white;
-    -fx-font-size: 20px;
-    -fx-cursor: hand;
-}
-
-/* Top Bar */
-.topbar {
+.login-box {
     -fx-background-color: white;
-    -fx-border-color: #e5e7eb;
-    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0, 0, 4);
 }
 
-/* Profile */
-.profile-label {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #111827;
-}
-
-/* Logout Button */
-.logout-button {
-    -fx-background-color: #ef4444;
+.primary-button {
+    -fx-background-color: #1a73e8;
     -fx-text-fill: white;
-    -fx-background-radius: 8;
+    -fx-background-radius: 6;
     -fx-cursor: hand;
-}
-
-.logout-button:hover {
-    -fx-opacity: 0.9;
-}
-
-/* Content Area */
-.content-area {
-    -fx-background-color: #f9fafb;
-}
-
-/* Content Title */
-.content-title {
-    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #111827;
 }
 
-/* Inbox List */
+.primary-button:hover {
+    -fx-background-color: #1558b0;
+}
+
+.toolbar {
+    -fx-background-color: #1a73e8;
+}
+
+.toolbar .label {
+    -fx-text-fill: white;
+}
+
+.toolbar .button {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+}
+
+.toolbar .button:hover {
+    -fx-background-color: rgba(255,255,255,0.35);
+}
+
+.toolbar .primary-button {
+    -fx-background-color: white;
+    -fx-text-fill: #1a73e8;
+}
+
+.sidebar {
+    -fx-background-color: #e8f0fe;
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1a73e8;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-background-radius: 6;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: #c5d8fb;
+}
+
+.statusbar {
+    -fx-background-color: #eeeeee;
+}
+
 .list-view {
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-border-color: #d1d5db;
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+}
+
+.list-cell:selected {
+    -fx-background-color: #d2e3fc;
+    -fx-text-fill: #1a1a1a;
 }
