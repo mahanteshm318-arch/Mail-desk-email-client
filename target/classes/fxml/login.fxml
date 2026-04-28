@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.maildesk.controller.LoginController"
+            stylesheets="@/style.css">
+
+    <VBox alignment="CENTER"
+          spacing="20"
+          layoutX="225"
+          layoutY="75"
+          prefWidth="350"
+          styleClass="login-box">
+
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <Label text="MailDesk" styleClass="app-title"/>
+        <Label text="Sign in to continue" styleClass="subtitle"/>
+
+        <TextField fx:id="emailField"
+                   promptText="Email"
+                   prefHeight="40"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Password"
+                       prefHeight="40"/>
+
+        <!-- FIXED METHOD NAME -->
+        <Button text="Login"
+                onAction="#handleLogin"
+                prefHeight="40"
+                styleClass="login-button"/>
+
+    </VBox>
+
+</AnchorPane>

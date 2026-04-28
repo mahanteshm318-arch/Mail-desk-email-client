@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.maildesk.controller.DashboardController">
+
+    <left>
+        <VBox fx:id="sidebar" spacing="10" styleClass="sidebar" prefWidth="220">
+
+            <Button text="☰ Toggle" onAction="#toggleSidebar" styleClass="toggle-button"/>
+            <Label text="MailDesk" styleClass="sidebar-title"/>
+
+            <Button text="Inbox" styleClass="sidebar-button"/>
+            <Button text="Compose" onAction="#openCompose" styleClass="sidebar-button"/>
+            <Button text="Logout" onAction="#logout" styleClass="sidebar-button"/>
+
+        </VBox>
+    </left>
+
+    <center>
+        <ListView fx:id="inboxList"
+                  onMouseClicked="#openEmail"/>
+    </center>
+
+    <right>
+        <WebView fx:id="emailPreview" prefWidth="450"/>
+    </right>
+
+</BorderPane>

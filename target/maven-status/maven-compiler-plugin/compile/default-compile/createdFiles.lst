@@ -1,0 +1,9 @@
+com\maildesk\model\EmailMessage.class
+com\maildesk\service\AuthService.class
+com\maildesk\Main.class
+com\maildesk\service\MailService.class
+com\maildesk\controller\ComposeController.class
+com\maildesk\controller\DashboardController.class
+com\maildesk\util\EncryptionUtil.class
+com\maildesk\controller\LoginController.class
+com\maildesk\service\DatabaseService.class
